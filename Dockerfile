@@ -16,7 +16,7 @@ RUN apt-get install -y --no-install-recommends clang-tools-17 && \
 USER build
 WORKDIR /home/build/
 ENV PATH=".local/bin:${PATH}"
-RUN pip3 install conan cmake --user
+RUN pip3 install conan cmake gcovr --user
 RUN conan profile detect
 RUN pip3 cache purge
 #COPY --from=winsdk --chown=build:build /home/build/WindowsSDK /home/build/WindowsSDK
