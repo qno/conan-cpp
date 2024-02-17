@@ -1,3 +1,4 @@
+
 FROM ghcr.io/qno/windows-sdk as winsdk
 FROM ubuntu:latest
 ENV LANG C.UTF-8
@@ -17,4 +18,5 @@ USER build
 WORKDIR /home/build/
 RUN pip3 install conan cmake --user
 #COPY --from=winsdk --chown=build:build /home/build/WindowsSDK /home/build/WindowsSDK
+ENV PATH=".local/bin:${PATH}"
 CMD ["/bin/bash"]
