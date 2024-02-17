@@ -55,6 +55,7 @@ jobs:
           type=raw,value=latest,enable={{is_default_branch}}
           type=raw,value=conan-2.1.0
           type=raw,value=clang-17
+          type=raw,value=gcc-11
           type=sha
           
     - name: Build and push Docker image
