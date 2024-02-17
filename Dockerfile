@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends wget build-essential python3-pip ninja-build g++ gcc lsb-release software-properties-common gnupg
 RUN bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)" -- 17
 RUN apt-get install -y --no-install-recommends clang-tools-17 && \
-    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/lib/apt/lists/*
     #https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3-linux-x86_64.sh
 
 USER build
