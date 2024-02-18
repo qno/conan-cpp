@@ -25,11 +25,11 @@ jobs:
       id-token: write
 
     steps:
-    #- name: Free Disk Space (Ubuntu)
-    #  uses: jlumbroso/free-disk-space@main
-    #  with:
-    #    tool-cache: true
-    #    docker-images: false
+    - name: Free Disk Space (Ubuntu)
+      uses: jlumbroso/free-disk-space@main
+      with:
+        tool-cache: true
+        docker-images: false
     - uses: actions/checkout@v4
     - name: Install cosign
       if: github.event_name != 'pull_request'
