@@ -3,6 +3,7 @@ ARG CLANG_VERSION=17
 FROM ghcr.io/qno/windows-sdk as winsdk
 FROM --platform=$BUILDPLATFORM crazymax/osxcross:${OSXCROSS_VERSION}-ubuntu as osxcross
 FROM ubuntu:latest
+ARG CLANG_VERSION
 ENV LANG C.UTF-8
 
 # Create unprivileged user
