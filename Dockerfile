@@ -1,6 +1,5 @@
-
-FROM ghcr.io/qno/windows-sdk as winsdk
 ARG OSXCROSS_VERSION=edge
+FROM ghcr.io/qno/windows-sdk as winsdk
 FROM --platform=$BUILDPLATFORM crazymax/osxcross:${OSXCROSS_VERSION}-ubuntu AS osxcross
 FROM ubuntu:latest
 ENV LANG C.UTF-8
