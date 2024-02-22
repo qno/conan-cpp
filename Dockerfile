@@ -31,7 +31,7 @@ WORKDIR /home/build/
 CMD ["/bin/bash"]
 RUN --mount=type=bind,from=osxcross,source=/osxcross,target=/osxcross cp -rf /osxcross .
 RUN --mount=type=bind,from=winsdk,source=/WindowsSDK,target=/WindowsSDK cp -rf /WindowsSDK .
-ENV PATH=".local/bin:${PATH}"
+ENV PATH="/home/build/.local/bin:${PATH}"
 RUN pip3 install conan cmake gcovr --user
 RUN conan profile detect
 RUN pip3 cache purge
